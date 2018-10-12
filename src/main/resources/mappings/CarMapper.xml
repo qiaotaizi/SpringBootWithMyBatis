@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jaiz.learn.carlist.dao.CarDAO" >
+    <select id="queryCarPage" resultMap="carPO">
+        SELECT CAR_ID,CAR_NAME,PRICE FROM THIRDPARTY_CAR
+        order by id
+        limit 0,10
+    </select>
+
+    <resultMap id="carPO" type="com.jaiz.learn.carlist.entities.CarPO">
+        <result column="car_id" property="carId" />
+        <result column="car_name" property="carName" />
+        <result column="price" property="price" />
+    </resultMap>
+</mapper>

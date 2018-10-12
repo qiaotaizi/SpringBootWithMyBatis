@@ -1,0 +1,22 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.16.2.15:3306/ttpai_buy_car?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    username: bossuser
+    password: 51auto_v4
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      auto-commit: true
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+#链接池技术使用springBoot默认的HikaliCP
+
+mybatis:
+  mapper-locations: classpath:mappings/*.xml
